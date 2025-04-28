@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 70% 99%;
+    --foreground: 36 10% 15%;
+
+    --card: 36 70% 99%;
+    --card-foreground: 36 10% 15%;
+
+    --popover: 36 70% 99%;
+    --popover-foreground: 36 10% 15%;
+
+    --primary: 24 56% 30%;
+    --primary-foreground: 24 10% 98%;
+
+    --secondary: 120 15% 85%;
+    --secondary-foreground: 120 10% 20%;
+
+    --muted: 36 10% 92%;
+    --muted-foreground: 36 10% 40%;
+
+    --accent: 36 50% 90%;
+    --accent-foreground: 36 30% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 36 20% 85%;
+    --input: 36 20% 85%;
+    --ring: 36 56% 30%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 36 20% 10%;
+    --foreground: 36 10% 95%;
+
+    --card: 36 20% 12%;
+    --card-foreground: 36 10% 95%;
+
+    --popover: 36 20% 12%;
+    --popover-foreground: 36 10% 95%;
+
+    --primary: 24 56% 50%;
+    --primary-foreground: 24 10% 10%;
+
+    --secondary: 120 10% 20%;
+    --secondary-foreground: 120 10% 90%;
+
+    --muted: 36 10% 20%;
+    --muted-foreground: 36 10% 70%;
+
+    --accent: 36 30% 25%;
+    --accent-foreground: 36 30% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 36 20% 25%;
+    --input: 36 20% 25%;
+    --ring: 36 56% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-poppins font-semibold;
+  }
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-sans {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Custom animations */
+@keyframes gentle-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-gentle-fade-in {
+  animation: gentle-fade-in 0.8s ease-out forwards;
+}
+
+/* Staggered animation for children */
+.stagger-children > * {
+  opacity: 0;
+  animation: gentle-fade-in 0.8s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-children > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-children > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-children > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stagger-children > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stagger-children > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
